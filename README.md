@@ -122,6 +122,7 @@ In general `chardetng` prefers to do negative matching (rule out possibilities f
 * Thai detection is inaccurate for short inputs.
 * windows-1257 detection is very inaccurate. (This detector currently doesn't use trigrams. ced uses 8 KB of trigram data to solve this.)
 * On non-generic domains, some encodings that are confusable with the legacy encodings native to the TLD are excluded from guesses outright unless the input is invalid according to all the TLD-native encodings.
+* Characters that were reassigned in the latest GB18030 update may interfere with detection.
 
 ## MSRV
 
