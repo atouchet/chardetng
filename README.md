@@ -123,6 +123,10 @@ In general `chardetng` prefers to do negative matching (rule out possibilities f
 * windows-1257 detection is very inaccurate. (This detector currently doesn't use trigrams. ced uses 8 KB of trigram data to solve this.)
 * On non-generic domains, some encodings that are confusable with the legacy encodings native to the TLD are excluded from guesses outright unless the input is invalid according to all the TLD-native encodings.
 
+## MSRV
+
+There is no MSRV guarantee even across increments of the third component of the version number. The current MSRV of this crate is 1.40. The crate builds on 1.40 but doctests error out. You may need to manually choose sufficiently old versions of the dependencies.
+
 ## Associated tools
 
 * [traindet](https://github.com/hsivonen/traindet) tool for computing the statistics for the generated code

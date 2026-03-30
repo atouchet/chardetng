@@ -2832,7 +2832,7 @@ impl BeforeNonAscii {
 pub enum Utf8Detection {
     /// The guess result is allowed to be UTF-8.
     ///
-    /// Web browsers should not pass this option by default
+    /// Web browsers must not pass this option by default
     /// to avoid creating a situation where Web content starts
     /// depending on unlabeled detection of UTF-8.
     Allow,
@@ -2982,12 +2982,13 @@ impl EncodingDetector {
     /// from is unavalable, `None` may be passed instead, which is equivalent
     /// to passing `Some(b"com")`.
     ///
-    /// If the `allow_utf8` argument is set to `false`, the return value of
-    /// this method won't be `encoding_rs::UTF_8`. When performing detection
-    /// on `text/html` on non-`file:` URLs, Web browsers must pass `false`,
-    /// unless the user has taken a specific contextual action to request an
-    /// override. This way, Web developers cannot start depending on UTF-8
-    /// detection. Such reliance would make the Web Platform more brittle.
+    /// If the `allow_utf8` argument is set to `Utf8Detection::Deny`, the
+    /// return value of this method won't be `encoding_rs::UTF_8`. When
+    /// performing detection on `text/html` on non-`file:` URLs, Web browsers
+    /// must pass `Utf8Detection::Deny`, unless the user has taken a specific
+    /// contextual action to request an override. This way, Web developers cannot
+    /// start depending on UTF-8 detection. Such reliance would make the Web Platform
+    /// more brittle.
     ///
     /// Returns the guessed encoding.
     ///
