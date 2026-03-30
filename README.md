@@ -153,6 +153,8 @@ Improvements to detection results are not planned, and isolated examples of misd
 * Make `cargo test` work.
 * Update `arrayvec`. (used only by the `multithreading` feature.)
 * Remove the `guess_assess` API.
+* Add control whether ISO-2022-JP detection is considered or not.
+* Use two-variant enum instead of a boolean for whether UTF-8 detection is allowed.
 
 ### 0.1.17
 
