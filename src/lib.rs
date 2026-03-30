@@ -3416,6 +3416,12 @@ mod tests {
     }
 
     #[test]
+    fn test_en_windows1252() {
+        // "Don't "
+        check_bytes(&[68, 111, 110, 180, 116, 32], WINDOWS_1252);
+    }
+
+    #[test]
     fn test_he() {
         check("\u{5E2}\u{5D1}\u{5E8}\u{5D9}\u{5EA}", WINDOWS_1255);
     }
