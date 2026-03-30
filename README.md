@@ -152,6 +152,7 @@ Improvements to detection results are not planned, and isolated examples of misd
 * Add method `tld_may_affect_guess`.
 * Make `cargo test` work.
 * Update `arrayvec`. (used only by the `multithreading` feature.)
+* Remove the `guess_assess` API.
 
 ### 0.1.17
 
